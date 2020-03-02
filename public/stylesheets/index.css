@@ -1,0 +1,36 @@
+html { 
+    background: url("https://newevolutiondesigns.com/images/freebies/dog-wallpaper-17.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-family: 'Trade Winds';
+}
+
+h3, p {
+  padding-top: 50px;
+  margin-top: 3vmin;
+  font-family: 'Simonetta';
+  color: white;
+  text-shadow: black;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 25px;
+}
+
+a {
+  color: red;
+  margin: auto;
+  font-size: 40px;
+  float: right;
+}
