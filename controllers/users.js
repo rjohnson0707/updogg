@@ -6,7 +6,10 @@ module.exports = {
     foods,
     hikes,
     parks,
-    health
+    health,
+    about,
+    profile,
+    new: newLocation
 };
 
 function index(req, res) {
@@ -34,4 +37,16 @@ function parks(req, res) {
 
 function health(req, res) {
     res.render('users/health');
+};
+
+function about(req, res) {
+    res.render('users/about');
+};
+
+function profile(req, res) {
+    res.render('users/profile');
+};
+
+function newLocation(req, res) {
+    res.render('users/new');
 }

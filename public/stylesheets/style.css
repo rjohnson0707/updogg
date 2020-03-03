@@ -66,18 +66,16 @@ visibility: visible;
    background-color: black;
  }
 
-#parkSec {
+#sections  {
   margin-top: 56px;
 }
 
-#hikeSec {
-margin-top: 56px;
+.location-header {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Simonetta";
 }
 
-#healthSec {
-margin-top: 56px;
-}
-
-#foodSec {
-margin-top: 56px;
+.A {
+  font-weight: bold;
 }
