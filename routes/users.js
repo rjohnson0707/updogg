@@ -8,6 +8,4 @@ router.get('/about', usersCtrl.about);
 router.get('/profile', usersCtrl.profile);
 
 
-
-
 module.exports = router;

@@ -7,15 +7,24 @@ module.exports = {
     profile,
 };
 
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+}
+
 function index(req, res) {
     res.render('users/index', {
-        user: req.user,
-        name: req.query.name
+        user: req.user
     });
+if (isLoggedIn) {
+    res.render('users/home')
+}
 };
 
 function home(req, res) {
-    res.render('users/home');
+    res.render('users/home', {
+        user: req.user
+    });
 }
 
 function about(req, res) {
