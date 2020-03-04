@@ -4,7 +4,10 @@ module.exports = {
     index,
     show,
     new: newHike,
-    create
+    create,
+    edit,
+    update,
+    delete: deleteHike
 };
 
 function show(req, res) {
@@ -36,3 +39,24 @@ function create(req, res) {
     res.redirect('/hikes');
     });
 }
+
+function edit(req, res) {
+    Hike.findById(req.params.id, function(err, hike) {
+        res.render('hikes/edit', {
+        hike
+        })
+    })
+ };
+ 
+ function update(req, res) {
+     req.body.leash = !!req.body.leash;
+     Hike.findByIdAndUpdate(req.params.id, req.body, function(err, hike) {
+         res.redirect(`/hikes/${hike._id}`);
+     });
+ };
+
+ function deleteHike(req, res) {
+    Hike.findByIdAndDelete(req.params.id, function(err, hike) {
+        res.redirect('/hikes');
+    });
+};

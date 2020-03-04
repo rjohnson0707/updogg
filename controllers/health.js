@@ -4,7 +4,10 @@ module.exports = {
     index,
     show,
     new: newHealth,
-    create
+    create,
+    edit,
+    update,
+    delete: deleteHealth
 };
 
 function show(req, res) {
@@ -36,3 +39,23 @@ function create(req, res) {
     res.redirect('/health');
     });
 }
+
+function edit(req, res) {
+    Health.findById(req.params.id, function(err, health) {
+        res.render('health/edit', {
+        health
+        })
+    })
+ };
+ 
+ function update(req, res) {
+     Health.findByIdAndUpdate(req.params.id, req.body, function(err, health) {
+         res.redirect(`/health/${health._id}`);
+     });
+ };
+
+ function deleteHealth(req, res) {
+    Health.findByIdAndDelete(req.params.id, function(err, health) {
+        res.redirect('/health');
+    });
+};

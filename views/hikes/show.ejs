@@ -7,7 +7,11 @@
     <div>Leash Required: <%= hike.leash ? 'Yes' : 'No' %></div>
 </section>
 
+<a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
 <a href="/hikes">Back to Hikes</a>
+<form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
+  <button type="submit">DELETE HIKE?</button>
+  </form>
 
 <br><br><h2>Reviews</h2>
 <form method="POST"

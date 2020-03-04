@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+
+<section id="sections">
+    <h2>Edit <%= food.name %></h2>
+    <form action="/foods/<%= food._id %>?_method=PUT" method="POST">
+        <label>Name:
+          <input type="text" name="name" value="<%= food.name %>">
+        </label><br>
+        <label>Address(City, State):
+          <input type="text" name="address" value="<%= food.address %>">
+        </label><br>
+        <label>Description:
+            <textarea name="description"><%= food.description %></textarea>
+        </label><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/foods">Back to Locations</a>
+</section>
+    
+<%- include('../partials/footer'); %>

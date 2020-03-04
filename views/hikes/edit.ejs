@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+
+<section id="sections">
+    <h2>Edit <%= hike.name %></h2>
+    <form action="/hikes/<%= hike._id %>?_method=PUT" method="POST">
+        <label>Name:
+          <input type="text" name="name" value="<%= hike.name %>">
+        </label><br>
+        <label>Address(City, State):
+          <input type="text" name="address" value="<%= hike.address %>">
+        </label><br>
+        <label>Description:
+            <textarea name="description"><%= hike.description %></textarea>
+        </label><br>
+        <label>Leash:
+            <input type="checkbox" name="leash" checked>
+          </label><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/hikes">Back to Hikes</a>
+</section>
+    
+<%- include('../partials/footer'); %>

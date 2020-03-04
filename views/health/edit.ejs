@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+
+<section id="sections">
+    <h2>Edit <%= health.name %></h2>
+    <form action="/health/<%= health._id %>?_method=PUT" method="POST">
+        <label>Name:
+          <input type="text" name="name" value="<%= health.name %>">
+        </label><br>
+        <label>Address(City, State):
+          <input type="text" name="address" value="<%= health.address %>">
+        </label><br>
+        <label>Description:
+            <textarea name="description"><%= health.description %></textarea>
+        </label><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/health">Back to Locations</a>
+</section>
+    
+<%- include('../partials/footer'); %>

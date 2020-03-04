@@ -7,7 +7,8 @@ module.exports = {
     new: newPark,
     create,
     edit,
-    update
+    update,
+    delete: deletePark
 }
 
 
@@ -51,9 +52,16 @@ function edit(req, res) {
    })
 };
 
-function update(park, id) {
+function update(req, res) {
     req.body.leash = !!req.body.leash;
-    Park.update(req.params.id, function(err, park) {
-        res.render('parks/show');
-    })
-}
+    Park.findByIdAndUpdate(req.params.id, req.body, function(err, park) {
+        console.log(park);
+        res.redirect(`/parks/${park._id}`);
+    });
+};
+
+function deletePark(req, res) {
+    Park.findByIdAndDelete(req.params.id, function(err, park) {
+        res.redirect('/parks');
+    });
+};

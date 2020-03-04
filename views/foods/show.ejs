@@ -6,6 +6,12 @@
     <div>Description: <%= food.description %></div>
 </section>
 
+<a href="/foods">Back to Locations</a>
+<a href="/foods/<%= food._id %>/edit">Edit Location?</a>
+<form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+  <button type="submit">DELETE LOCATION</button>
+  </form>
+
 <br><br><h2>Reviews</h2>
 <form method="POST"
   action="/foods/<%= food._id %>/reviews">
@@ -36,7 +42,7 @@
       <% food.reviews.forEach(function(f) { %>
         <% total += f.rating %>
         <tr>
-          <td><%= p.createdAt.toLocaleDateString() %></td>
+          <td><%= f.createdAt.toLocaleDateString() %></td>
           <td><%= f.content %></td>
           <td><%= f.rating %></td>
         </tr>
