@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+
+<section id="sections">
+    <h2>Enter a New Restaurant/Brewery</h2>
+    <form action="/foods" method="POST">
+        <label>Name:
+          <input type="text" name="name">
+        </label><br>
+        <label>Address(City, State):
+          <input type="text" name="address">
+        </label><br>
+        <label>Description:
+            <textarea name="description"></textarea>
+        </label><br>
+        <input type="submit" value="Add Location">
+    </form>
+    <a href="/foods">Back to Locations</a>
+</section>
+    
+<%- include('../partials/footer'); %>

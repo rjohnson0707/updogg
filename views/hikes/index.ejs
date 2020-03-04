@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<section id="sections">
+  <section id="background">
+
+    <h1 class="location-header A">Here is the current list of UpDog Dog-Friendly Hikes</h1>
+    <h3 class="location-header">Don't forget, UpDog is a Community App! <br> Know of a Hike that is not on here?<br><a href="/hikes/new">ADD YOUR HIKE HERE</a></h3>
+    <table>
+      <tr>
+        <th>Hike Name</th>
+        <th>Hike Location</th>
+        <th>Description</th>
+        <th>Details</th>
+      </tr>
+    <% hikes.forEach(function(hike) { %>
+      <tr>
+        <td><%= hike.name %></td>
+        <td><%= hike.address %></td>
+        <td><%= hike.description %></td>
+        <td><a href="/hikes/<%= hike._id %>">Information</a></td>
+    </tr>
+      <% }); %>
+      </table>
+    </section>
+  </section>
+<%- include('../partials/footer') %>

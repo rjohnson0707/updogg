@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<section id="sections">
+  <section id="background">
+    <h1 class="location-header A">Here is the current list of UpDog Restaurants and Breweries</h1>
+    <h3 class="location-header">Don't forget, UpDog is a Community App! <br> Know of a Restaurant or Brewery that is not on here?<br><a href="/foods/new">ADD LOCATION HERE</a></h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Details</th>
+      </tr>
+    <% foods.forEach(function(food) { %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.address %></td>
+        <td><%= food.description %></td>
+        <td><a href="/foods/<%= food._id %>">Information</a></td>
+    </tr>
+      <% }); %>
+      </table>          
+</section>
+</section>
+<%- include('../partials/footer') %>

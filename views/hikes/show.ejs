@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<section id="sections">
+    <div>Name: <%= hike.name %></div>
+    <div>Address: <%= hike.address %></div>
+    <div>Description: <%= hike.description %></div>
+    <div>Leash Required: <%= hike.leash ? 'Yes' : 'No' %></div>
+</section>
+
+<a href="/hikes">Back to Hikes</a>
+
+<br><br><h2>Reviews</h2>
+<form method="POST"
+  action="/hikes/<%= hike._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (hike.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+      	 <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var total = 0 %>
+      <% hike.reviews.forEach(function(h) { %>
+        <% total += h.rating %>
+        <tr>
+          <td><%= h.createdAt.toLocaleDateString() %></td>
+          <td><%= h.content %></td>
+          <td><%= h.rating %></td>
+        </tr>
+        <% }); %>
+        <tr>
+          <td colspan="2"></td>
+          <td><strong><%= (total / hike.reviews.length).toFixed(1) %></strong></td>
+        </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>

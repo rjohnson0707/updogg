@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+
+<section id="sections">
+    <div>Name: <%= food.name %></div>
+    <div>Address: <%= food.address %></div>
+    <div>Description: <%= food.description %></div>
+</section>
+
+<br><br><h2>Reviews</h2>
+<form method="POST"
+  action="/foods/<%= food._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (food.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+      	 <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var total = 0 %>
+      <% food.reviews.forEach(function(f) { %>
+        <% total += f.rating %>
+        <tr>
+          <td><%= p.createdAt.toLocaleDateString() %></td>
+          <td><%= f.content %></td>
+          <td><%= f.rating %></td>
+        </tr>
+        <% }); %>
+        <tr>
+          <td colspan="2"></td>
+          <td><strong><%= (total / food.reviews.length).toFixed(1) %></strong></td>
+        </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>
