@@ -1,7 +1,22 @@
 <%- include('../partials/header'); %>
 
 <section id="sections">
-    <h2>Edit</h2>
+    <h2>Edit <%= park.name %></h2>
+    <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
+        <label>Name:
+          <input type="text" name="name" value="<%= park.name %>">
+        </label><br>
+        <label>Address(City, State):
+          <input type="text" name="address" value="<%= park.address %>">
+        </label><br>
+        <label>Description:
+            <textarea name="description" value="<%= park.description %>"></textarea>
+        </label><br>
+        <label>Leash:
+          <input type="checkbox" name="leash" checked>
+        </label><br>
+        <input type="submit" value="Update">
+    </form>
     <a href="/parks">Back to Parks</a>
 </section>
     

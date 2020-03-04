@@ -45,7 +45,9 @@ function create(req, res) {
 
 function edit(req, res) {
    Park.findById(req.params.id, function(err, park) {
-       res.render('parks/edit')
+       res.render('parks/edit', {
+       park
+       })
    })
 };
 
