@@ -77,12 +77,17 @@ visibility: visible;
   font-family: 'Simonetta';
   font-size: 20px;
   text-align: left;
-  margin-right: 5px;
+  margin-left: 5px;
   background-image: url("https://www.lefthudson.com/wp-content/uploads/2019/11/dog-backgrounds-beautiful-dog-background-c2b7e291a0-download-free-cool-hd-backgrounds-for-desktop-puters-and-smartphones-in-any-this-year-of-dog-backgrounds.jpg"); 
  -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
   background-size: cover;
+}
+
+#aboutText {
+  margin-left: 20px;
+  padding-top: 40px;
 }
 
 .location-header {
@@ -123,4 +128,10 @@ table, th, td {
 .mainName {
   font-weight: bold;
   font-size: 30px;
+}
+
+#logo {
+  width: 4vw;
+  height: 6vh;
+  float: right;
 }
