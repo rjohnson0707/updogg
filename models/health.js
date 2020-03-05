@@ -9,6 +9,7 @@ const reviewSchema = new Schema({
   });
 
 const healthSchema = new Schema({
+    createdBy: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     name: String,
     address: String,
     type: String,

@@ -1,24 +1,17 @@
 const User = require('../models/user');
+const Park = require('../models/park');
 
 module.exports = {
     index,
     home,
     about,
-    profile,
+    profile
 };
-
-function isLoggedIn(req, res, next) {
-    if ( req.isAuthenticated() ) return next();
-    res.redirect('/auth/google');
-}
 
 function index(req, res) {
     res.render('users/index', {
         user: req.user
     });
-if (isLoggedIn) {
-    res.render('users/home')
-}
 };
 
 function home(req, res) {
@@ -28,10 +21,14 @@ function home(req, res) {
 }
 
 function about(req, res) {
-    res.render('users/about');
+    res.render('users/about', {
+        user: req.user
+    });
 };
 
 function profile(req, res) {
-    res.render('users/profile');
+    res.render('users/profile', {
+    user: req.user
+    });
 };
 

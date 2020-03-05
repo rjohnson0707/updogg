@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>UpDog</title>
+  <title>UpDogg</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
@@ -18,7 +18,13 @@
             <div class="navbar-nav">
                 <a href="/users/home" class="nav-item nav-link active">Home</a>
                 <a href="/users/about" class="nav-item nav-link">What's UpDog?</a>
-                <a href="/users/profile" class="nav-item nav-link">Profile</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= user.name %></a>
+                    <div class="dropdown-menu">
+                        <a href="/users/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Log Out</a>
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Locations</a>
                     <div class="dropdown-menu">
@@ -29,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            <div>Hi <%= user._id %>!</div>
             <div class="logout">
                  <a href="/logout">Log Out</a>        
             </div>

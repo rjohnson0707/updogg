@@ -13,14 +13,18 @@ module.exports = {
 function show(req, res) {
     Hike.findById(req.params.id, function(err, hike) {
         res.render('hikes/show', {
-            hike
+            hike,
+            user: req.user
         })
     });
 };
 
 function index(req, res) {
     Hike.find({}, function(err, hikes) {
-        res.render('hikes', { hikes });
+        res.render('hikes', { 
+            hikes,
+        user: req.user
+     });
     });
 }
 
@@ -28,12 +32,15 @@ function index(req, res) {
 function newHike(req, res) {
     Hike.find({}, function(err, hikes) {
     res.render('hikes/new', {
-        hikes
+        hikes,
+        user: req.user
     });
   })
 }
 
 function create(req, res) {
+    req.body.leash = !!req.body.leash;
+    req.body.createdBy = req.user._id;
     Hike.create(req.body, function(err, hike) {
     if (err) return res.redirect('/hikes');
     res.redirect('/hikes');
@@ -43,7 +50,8 @@ function create(req, res) {
 function edit(req, res) {
     Hike.findById(req.params.id, function(err, hike) {
         res.render('hikes/edit', {
-        hike
+        hike,
+        user: req.user
         })
     })
  };

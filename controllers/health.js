@@ -13,14 +13,18 @@ module.exports = {
 function show(req, res) {
     Health.findById(req.params.id, function(err, health) {
         res.render('health/show', {
-            health
+            health,
+            user: req.user
         })
     });
 };
 
 function index(req, res) {
     Health.find({}, function(err, health) {
-        res.render('health', { health });
+        res.render('health', { 
+            health,
+        user: req.user
+     });
     });
 }
 
@@ -28,12 +32,14 @@ function index(req, res) {
 function newHealth(req, res) {
     Health.find({}, function(err, health) {
     res.render('health/new', {
-        health
+        health,
+        user: req.user
     });
   })
 }
 
 function create(req, res) {
+    req.body.createdBy = req.user._id;
     Health.create(req.body, function(err, health) {
     if (err) return res.redirect('/health');
     res.redirect('/health');
@@ -43,7 +49,8 @@ function create(req, res) {
 function edit(req, res) {
     Health.findById(req.params.id, function(err, health) {
         res.render('health/edit', {
-        health
+        health,
+        user: req.user
         })
     })
  };

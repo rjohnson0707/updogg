@@ -13,14 +13,18 @@ module.exports = {
 function show(req, res) {
     Food.findById(req.params.id, function(err, food) {
         res.render('foods/show', {
-            food
+            food,
+            user: req.user
         })
     });
 };
 
 function index(req, res) {
     Food.find({}, function(err, foods) {
-        res.render('foods', { foods });
+        res.render('foods', { 
+            foods,
+        user: req.user 
+    });
     });
 }
 
@@ -28,12 +32,14 @@ function index(req, res) {
 function newFood(req, res) {
     Food.find({}, function(err, foods) {
     res.render('foods/new', {
-        foods
+        foods,
+        user: req.user
     });
   })
 }
 
 function create(req, res) {
+    req.body.createdBy = req.user._id;
     Food.create(req.body, function(err, food) {
     if (err) return res.redirect('/foods');
     res.redirect('/foods');
@@ -44,7 +50,8 @@ function create(req, res) {
 function edit(req, res) {
     Food.findById(req.params.id, function(err, food) {
         res.render('foods/edit', {
-        food
+        food,
+        user: req.user
         })
     })
  };

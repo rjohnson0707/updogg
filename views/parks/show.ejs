@@ -2,17 +2,19 @@
 
 <section id="sections">
     <div>Name: <%= park.name %></div>
+    <div>Created By: <%= park.createdBy %></div>
     <div>Address: <%= park.address %></div>
     <div>Description: <%= park.description %></div>
     <div>Leash Required: <%= park.leash ? 'Yes' : 'No' %></div>
 </section>
 
-<a href="/parks/<%= park._id %>/edit">Edit Park?</a>
 <a href="/parks">Back to Parks</a>
-<form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
-<button type="submit">DELETE PARK</button>
+<% if (user._id.equals(park.createdBy[0])) { %>
+<a href="/parks/<%= park._id %>/edit">Edit Park?</a>
+      <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
+        <button type="submit">DELETE PARK</button>
+        <% } %>
 </form>
-
 <br><br><h2>Reviews</h2>
 <form method="POST"
   action="/parks/<%= park._id %>/reviews">

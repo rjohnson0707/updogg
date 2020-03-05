@@ -9,6 +9,7 @@ const reviewSchema = new Schema({
   });
 
 const foodSchema = new Schema({
+    createdBy: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     name: String,
     address: String,
     description: String,

@@ -6,13 +6,14 @@
     <div>Description: <%= health.description %></div>
 </section>
 
-<a href="/health">Back to Locations</a>
-
+<% if (user._id.equals(health.createdBy[0])) { %>
 <a href="/health/<%= health._id %>/edit">Edit Location?</a>
 <form action="/health/<%= health._id %>?_method=DELETE" method="POST">
   <button type="submit">DELETE PARK</button>
-  </form>
+</form>
+<% } %>
 
+<a href="/health">Back to Locations</a>
 <br><br><h2>Reviews</h2>
 <form method="POST"
   action="/health/<%= health._id %>/reviews">

@@ -7,12 +7,14 @@
     <div>Leash Required: <%= hike.leash ? 'Yes' : 'No' %></div>
 </section>
 
-<a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
-<a href="/hikes">Back to Hikes</a>
-<form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-  <button type="submit">DELETE HIKE?</button>
+<% if (user._id.equals(hike.createdBy[0])) { %>
+  <a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
+  <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
+    <button type="submit">DELETE HIKE?</button>
   </form>
+<% } %>
 
+<a href="/hikes">Back to Hikes</a>
 <br><br><h2>Reviews</h2>
 <form method="POST"
   action="/hikes/<%= hike._id %>/reviews">
