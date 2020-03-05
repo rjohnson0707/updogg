@@ -30,7 +30,6 @@ UpDogg is an app that allows users to look up dog friendly locations in their ar
 * dotenv
 * passport
 * method-override
-* Materialize CSS
 
 **Database:**
 * MongoDB
