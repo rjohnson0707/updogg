@@ -16,5 +16,28 @@
 ![Image of Park List](/images/park.png)
 
 ### Technologies Used 
-
+**Languages:**
+JavaScript
+HTML
+CSS
+**Frameworks & Libraries**
+Node.JS
+expressJS
+ejs
+mongoose
+express-session
+dotenv
+passport
+method-override
+Materialize CSS
+**Database:**
+MongoDB
 #### Next Steps / IceBox Items
+- User Specific Profile Pages
+- Ability to add Pets
+- Forum for Discussions and Sharing Information
+- Maps Connectivity to allow for Directions to/from Parks
+- Direct Links to share the Locations websites
+- Ability to add images in Reviews
+- Have Ad functionality
+- Search functionality to quickly find locations
