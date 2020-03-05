@@ -17,21 +17,23 @@ UpDogg is an app that allows users to look up dog friendly locations in their ar
 
 ### Technologies Used 
 **Languages:**
-JavaScript
-HTML
-CSS
+* JavaScript
+* HTML
+* CSS
+
 **Frameworks & Libraries**
-Node.JS
-expressJS
-ejs
-mongoose
-express-session
-dotenv
-passport
-method-override
-Materialize CSS
+* Node.JS
+* expressJS
+* ejs
+* mongoose
+* express-session
+* dotenv
+* passport
+* method-override
+* Materialize CSS
+
 **Database:**
-MongoDB
+* MongoDB
 #### Next Steps / IceBox Items
 - User Specific Profile Pages
 - Ability to add Pets
