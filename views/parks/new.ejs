@@ -1,23 +1,25 @@
 <%- include('../partials/header'); %>
 
 <section id="sections">
+  <section id="centerSection">
     <h2>Enter a New Park</h2>
     <form action="/parks" method="POST">
-        <label>Name:
-          <input type="text" name="name">
-        </label><br>
-        <label>Address(City, State):
-          <input type="text" name="address">
-        </label><br>
-        <label>Description:
-            <textarea name="description"></textarea>
-        </label><br>
-        <label>Leash:
-          <input type="checkbox" name="leash" checked>
-        </label><br>
-        <input type="submit" value="Add Park">
+      <label>Name:
+        <input type="text" name="name">
+      </label><br>
+      <label>Address(City, State):
+        <input type="text" name="address">
+      </label><br>
+      <label>Description:
+        <textarea name="description"></textarea>
+      </label><br>
+      <label>Leash:
+        <input type="checkbox" name="leash" checked>
+      </label><br>
+      <input type="submit" value="Add Park">
     </form>
     <a href="/parks">Back to Parks</a>
+  </section>
 </section>
     
 <%- include('../partials/footer'); %>

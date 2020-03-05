@@ -1,21 +1,26 @@
 <%- include('../partials/header') %>
 
 <section id="sections">
-    <div>Name: <%= park.name %></div>
-    <div>Created By: <%= park.createdBy %></div>
-    <div>Address: <%= park.address %></div>
-    <div>Description: <%= park.description %></div>
-    <div>Leash Required: <%= park.leash ? 'Yes' : 'No' %></div>
+  <section id="separate">
+    <div id="infoDiv" class="mainName">Name: <%= park.name %></div>
+    <div id="infoDiv">Address: <%= park.address %></div>
+    <div id="infoDiv">Description: <%= park.description %></div>
+    <div id="infoDiv">Leash Required: <%= park.leash ? 'Yes' : 'No' %></div>
+  </section>
 </section>
-
-<a href="/parks">Back to Parks</a>
-<% if (user._id.equals(park.createdBy[0])) { %>
-<a href="/parks/<%= park._id %>/edit">Edit Park?</a>
-      <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
-        <button type="submit">DELETE PARK</button>
-        <% } %>
-</form>
-<br><br><h2>Reviews</h2>
+<br>
+<div>
+  <% if (user._id.equals(park.createdBy[0])) { %>
+    <a href="/parks/<%= park._id %>/edit">Edit Park?</a>
+    <br><br>
+    <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
+      <button type="submit">DELETE PARK</button>
+    </form>
+    <% } %>
+  </div>
+  <br><br>
+  <a href="/parks">Back to Parks</a>
+<br><br><br><h2>Reviews</h2>
 <form method="POST"
   action="/parks/<%= park._id %>/reviews">
   <label>Review:</label>

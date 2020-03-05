@@ -1,20 +1,27 @@
 <%- include('../partials/header') %>
 
 <section id="sections">
-    <div>Name: <%= health.name %></div>
-    <div>Address: <%= health.address %></div>
-    <div>Description: <%= health.description %></div>
+  <section id="separate">
+    <div id="infoDiv" class="mainName">Name: <%= health.name %></div>
+    <div id="infoDiv">Address: <%= health.address %></div>
+    <div id="infoDiv">Type of Location: <%= health.type %></div>
+    <div id="infoDiv">Description: <%= health.description %></div>
 </section>
-
-<% if (user._id.equals(health.createdBy[0])) { %>
-<a href="/health/<%= health._id %>/edit">Edit Location?</a>
-<form action="/health/<%= health._id %>?_method=DELETE" method="POST">
-  <button type="submit">DELETE PARK</button>
-</form>
-<% } %>
-
-<a href="/health">Back to Locations</a>
-<br><br><h2>Reviews</h2>
+</section>
+<br>
+<div>
+  <% if (user._id.equals(health.createdBy[0])) { %>
+    <a href="/health/<%= health._id %>/edit">Edit Location?</a>
+    <br><br>
+    <form action="/health/<%= health._id %>?_method=DELETE" method="POST">
+      <button type="submit">DELETE LOCATION</button>
+    </form>
+    <% } %>
+  </div>
+  <br><br>
+  <a href="/health">Back to Locations?</a>
+<br><br><br>
+<h2>Reviews</h2>
 <form method="POST"
   action="/health/<%= health._id %>/reviews">
   <label>Review:</label>

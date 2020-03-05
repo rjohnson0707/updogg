@@ -105,3 +105,22 @@ table, th, td {
   padding: 30px;
   width: 100vw;
 }
+
+#centerSection {
+  text-align: center;
+  padding: 30px;
+}
+
+#separate {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+#infoDiv {
+  padding: 5px;
+}
+
+.mainName {
+  font-weight: bold;
+  font-size: 30px;
+}

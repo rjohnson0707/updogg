@@ -1,6 +1,7 @@
 <%- include('../partials/header'); %>
 
 <section id="sections">
+  <section id="centerSection">
     <h2>Enter a New Location</h2>
     <form action="/health" method="POST">
         <label>Name:
@@ -11,9 +12,9 @@
         </label><br>
         <label>Type of Location
           <select name="type">
-            <option value="store">Store</option>
-            <option value="vet">Vet</option>
-            <option value="grooming">Grooming</option>
+            <option value="Store">Store</option>
+            <option value="Vet">Vet</option>
+            <option value="Grooming">Grooming</option>
           </select>
         </label><br>
         <label>Description:
@@ -23,6 +24,7 @@
         <input type="submit" value="Add Location">
     </form>
     <a href="/health">Back to Locations</a>
+</section>
 </section>
     
 <%- include('../partials/footer'); %>

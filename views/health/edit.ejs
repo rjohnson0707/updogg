@@ -9,6 +9,13 @@
         <label>Address(City, State):
           <input type="text" name="address" value="<%= health.address %>">
         </label><br>
+        <label>Type of Location
+          <select name="type">
+            <option value="Store">Store</option>
+            <option value="Vet">Vet</option>
+            <option value="Grooming">Grooming</option>
+          </select>
+        </label><br>
         <label>Description:
             <textarea name="description"><%= health.description %></textarea>
         </label><br>

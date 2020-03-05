@@ -1,21 +1,27 @@
 <%- include('../partials/header') %>
 
 <section id="sections">
-    <div>Name: <%= hike.name %></div>
-    <div>Address: <%= hike.address %></div>
-    <div>Description: <%= hike.description %></div>
-    <div>Leash Required: <%= hike.leash ? 'Yes' : 'No' %></div>
+  <section id="separate">
+    <div id="infoDiv" class="mainName">Name: <%= hike.name %></div>
+    <div id="infoDiv">Address: <%= hike.address %></div>
+    <div id="infoDiv">Description: <%= hike.description %></div>
+    <div id="infoDiv">Leash Required: <%= hike.leash ? 'Yes' : 'No' %></div>
 </section>
-
-<% if (user._id.equals(hike.createdBy[0])) { %>
-  <a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
-  <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-    <button type="submit">DELETE HIKE?</button>
-  </form>
-<% } %>
-
-<a href="/hikes">Back to Hikes</a>
-<br><br><h2>Reviews</h2>
+</section>
+<br>
+<div>
+  <% if (user._id.equals(hike.createdBy[0])) { %>
+    <a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
+    <br><br>
+    <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
+      <button type="submit">DELETE HIKE</button>
+    </form>
+    <% } %>
+  </div>
+  <br><br>
+  <a href="/hikes">Back to Hikes</a>
+<br><br><br>
+<h2>Reviews</h2>
 <form method="POST"
   action="/hikes/<%= hike._id %>/reviews">
   <label>Review:</label>

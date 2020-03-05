@@ -1,20 +1,26 @@
 <%- include('../partials/header') %>
 
 <section id="sections">
-    <div>Name: <%= food.name %></div>
-    <div>Address: <%= food.address %></div>
-    <div>Description: <%= food.description %></div>
+  <section id="separate">
+    <div id="infoDiv" class="mainName">Name: <%= food.name %></div>
+    <div id="infoDiv">Address: <%= food.address %></div>
+    <div id="infoDiv">Description: <%= food.description %></div>
 </section>
-
-<% if (user._id.equals(food.createdBy[0])) { %>
-<a href="/foods/<%= food._id %>/edit">Edit Location?</a>
-<form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
-  <button type="submit">DELETE LOCATION</button>
-</form>
-<% } %>
-
-<a href="/foods">Back to Locations</a>
-<br><br><h2>Reviews</h2>
+</section>
+<br>
+<div>
+  <% if (user._id.equals(food.createdBy[0])) { %>
+    <a href="/foods/<%= food._id %>/edit">Edit Location?</a>
+    <br><br>
+    <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+      <button type="submit">DELETE LOCATION</button>
+    </form>
+    <% } %>
+  </div>
+  <br><br>
+  <a href="/foods">Back to Locations</a>
+<br><br><br>
+<h2>Reviews</h2>
 <form method="POST"
   action="/foods/<%= food._id %>/reviews">
   <label>Review:</label>

@@ -1,6 +1,7 @@
 <%- include('../partials/header'); %>
 
 <section id="sections">
+  <section id="centerSection">
     <h2>Edit <%= food.name %></h2>
     <form action="/foods/<%= food._id %>?_method=PUT" method="POST">
         <label>Name:
@@ -15,6 +16,7 @@
         <input type="submit" value="Update">
     </form>
     <a href="/foods">Back to Locations</a>
+</section>
 </section>
     
 <%- include('../partials/footer'); %>

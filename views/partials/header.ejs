@@ -17,14 +17,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="/users/home" class="nav-item nav-link active">Home</a>
-                <a href="/users/about" class="nav-item nav-link">What's UpDog?</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= user.name %></a>
-                    <div class="dropdown-menu">
-                        <a href="/users/profile" class="dropdown-item">Profile</a>
-                        <a href="/logout" class="dropdown-item">Log Out</a>
-                    </div>
-                </div>
+                <a href="/users/about" class="nav-item nav-link">What's UpDogg?</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Locations</a>
                     <div class="dropdown-menu">
@@ -35,9 +28,16 @@
                     </div>
                 </div>
             </div>
-            <div>Hi <%= user._id %>!</div>
+            <div>Hi <%= user.name %>, Welcome to UpDogg!</div>
             <div class="logout">
-                 <a href="/logout">Log Out</a>        
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= user.name %></a>
+                    <div class="dropdown-menu">
+                        <a href="/users/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Log Out</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
