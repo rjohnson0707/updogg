@@ -14,7 +14,7 @@ const hikeSchema = new Schema({
     name: String,
     address: String,
     description: String,
-    leash: {type: Boolean, default: true},
+    leash: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true

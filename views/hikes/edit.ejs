@@ -14,8 +14,11 @@
             <textarea name="description"><%= hike.description %></textarea>
         </label><br>
         <label>Leash:
-            <input type="checkbox" name="leash" checked>
-          </label><br>
+          <select name="leash">
+            <option value="OnLeash">On-Leash</option>
+            <option value="OffLeash">Off-Leash</option>
+          </select>
+        </label><br>
         <input type="submit" value="Update">
     </form>
     <a href="/hikes">Back to Hikes</a>

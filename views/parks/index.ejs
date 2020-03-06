@@ -11,6 +11,7 @@
         <th>Park Name</th>
         <th>Park Location</th>
         <th>Description</th>
+        <th>Leash</th>
         <th>Details</th>
       </tr>
     <% parks.forEach(function(park) { %>
@@ -18,6 +19,7 @@
         <td><%= park.name %></td>
         <td><%= park.address %></td>
         <td><%= park.description %></td>
+        <td><%= park.leash %></td>
         <td><a href="/parks/<%= park._id %>">Information</a></td>
     </tr>
       <% }); %>

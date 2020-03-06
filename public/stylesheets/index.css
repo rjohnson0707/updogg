@@ -13,7 +13,7 @@ h1 {
 }
 
 h3, p {
-  padding-top: 50px;
+  padding-top: 40px;
   margin-top: 3vmin;
   font-family: 'Simonetta';
   color: white;
@@ -29,8 +29,23 @@ p {
 }
 
 a {
-  color: red;
+  color: beige;
   margin: auto;
   font-size: 40px;
+}
+
+a:hover {
+  color: yellow;
+text-shadow:0px 0px 30px black;
+-moz-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+-webkit-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+visibility: visible;
+}
+
+#logo {
   float: right;
+  padding-right: 4vw;
+ 
 }

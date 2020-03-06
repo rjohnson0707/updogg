@@ -41,7 +41,6 @@ function newPark(req, res) {
 }
 
 function create(req, res) {
-    req.body.leash = !!req.body.leash;
     req.body.createdBy = req.user._id;
     Park.create(req.body, function(err, park) {
     if (err) return res.redirect('/parks');
@@ -59,7 +58,6 @@ function edit(req, res) {
 };
 
 function update(req, res) {
-    req.body.leash = !!req.body.leash;
     Park.findByIdAndUpdate(req.params.id, req.body, function(err, park) {
         res.redirect(`/parks/${park._id}`);
     });
