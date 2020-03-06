@@ -1,4 +1,4 @@
-# UP-DOG
+# UP-DOGG
 
 **What's UpDogg?** 
 
