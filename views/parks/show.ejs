@@ -6,20 +6,21 @@
     <div id="infoDiv">Address: <%= park.address %></div>
     <div id="infoDiv">Description: <%= park.description %></div>
     <div id="infoDiv">Leash: <%= park.leash %></div>
+    <div id="infoDiv"><a href="<%= park.site %>">Visit Website</a></div>
   </section>
 </section>
 <br>
 <div>
   <% if (user._id.equals(park.createdBy[0])) { %>
-    <a href="/parks/<%= park._id %>/edit">Edit Park?</a>
+   <button><a href="/parks/<%= park._id %>/edit">Edit Park?</a></button>
     <br><br>
     <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
       <button type="submit">DELETE PARK</button>
     </form>
     <% } %>
   </div>
-  <br><br>
-  <a href="/parks">Back to Parks</a>
+  <br>
+  <button><a href="/parks">Back to Parks</a></button>
 <br><br><br><h2>Reviews</h2>
 <form method="POST"
   action="/parks/<%= park._id %>/reviews">

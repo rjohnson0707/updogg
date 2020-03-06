@@ -15,6 +15,7 @@ const parkSchema = new Schema({
     address: String,
     description: String,
     leash: String,
+    site: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true

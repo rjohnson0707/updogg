@@ -6,20 +6,22 @@
     <div id="infoDiv">Address: <%= health.address %></div>
     <div id="infoDiv">Type of Location: <%= health.type %></div>
     <div id="infoDiv">Description: <%= health.description %></div>
+    <div id="infoDiv"><a href="<%= health.site %>">Visit Website</a></div>
+
 </section>
 </section>
 <br>
 <div>
   <% if (user._id.equals(health.createdBy[0])) { %>
-    <a href="/health/<%= health._id %>/edit">Edit Location?</a>
+    <button><a href="/health/<%= health._id %>/edit">Edit Location?</a></button>
     <br><br>
     <form action="/health/<%= health._id %>?_method=DELETE" method="POST">
       <button type="submit">DELETE LOCATION</button>
     </form>
     <% } %>
   </div>
-  <br><br>
-  <a href="/health">Back to Locations?</a>
+  <br>
+  <button><a href="/health">Back to Locations?</a></button>
 <br><br><br>
 <h2>Reviews</h2>
 <form method="POST"

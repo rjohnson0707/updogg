@@ -6,20 +6,21 @@
     <div id="infoDiv">Address: <%= hike.address %></div>
     <div id="infoDiv">Description: <%= hike.description %></div>
     <div id="infoDiv">Leash: <%= hike.leash %></div>
+    <div id="infoDiv"><a href="<%= hike.site %>">Visit Website</a></div>
 </section>
 </section>
 <br>
 <div>
   <% if (user._id.equals(hike.createdBy[0])) { %>
-    <a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a>
+    <button><a href="/hikes/<%= hike._id %>/edit">Edit Hike?</a></button>
     <br><br>
     <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
       <button type="submit">DELETE HIKE</button>
     </form>
     <% } %>
   </div>
-  <br><br>
-  <a href="/hikes">Back to Hikes</a>
+  <br>
+  <button><a href="/hikes">Back to Hikes</a></button>
 <br><br><br>
 <h2>Reviews</h2>
 <form method="POST"

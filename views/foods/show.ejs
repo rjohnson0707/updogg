@@ -5,20 +5,21 @@
     <div id="infoDiv" class="mainName">Name: <%= food.name %></div>
     <div id="infoDiv">Address: <%= food.address %></div>
     <div id="infoDiv">Description: <%= food.description %></div>
+    <div id="infoDiv"><a href="<%= food.site %>">Visit Website</a></div>
 </section>
 </section>
 <br>
 <div>
   <% if (user._id.equals(food.createdBy[0])) { %>
-    <a href="/foods/<%= food._id %>/edit">Edit Location?</a>
+   <button><a href="/foods/<%= food._id %>/edit">Edit Location?</a></button>
     <br><br>
     <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
       <button type="submit">DELETE LOCATION</button>
     </form>
     <% } %>
   </div>
-  <br><br>
-  <a href="/foods">Back to Locations</a>
+  <br>
+  <button><a href="/foods">Back to Locations</a></button>
 <br><br><br>
 <h2>Reviews</h2>
 <form method="POST"

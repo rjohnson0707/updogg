@@ -15,6 +15,7 @@ const healthSchema = new Schema({
     address: String,
     type: String,
     description: String,
+    site: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true

@@ -14,6 +14,7 @@ const foodSchema = new Schema({
     name: String,
     address: String,
     description: String,
+    site: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true
