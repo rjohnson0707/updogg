@@ -4,24 +4,34 @@
 
     <h1 class="location-header A">Here is the current list of UpDog Dog-Friendly Hikes</h1>
     <h3 class="location-header">Don't forget, UpDog is a Community App! <br> Know of a Hike that is not on here?<br><a href="/hikes/new">ADD YOUR HIKE HERE</a></h3>
-    <table>
-      <tr>
-        <th>Hike Name</th>
-        <th>Hike Location</th>
-        <th>Description</th>
-        <th>Leash</th>
-        <th>Details</th>
-      </tr>
-    <% hikes.forEach(function(hike) { %>
-      <tr>
-        <td><%= hike.name %></td>
-        <td><%= hike.address %></td>
-        <td><%= hike.description %></td>
-        <td><%= hike.leash %></td>
-        <td><a href="/hikes/<%= hike._id %>">Information</a></td>
-    </tr>
-      <% }); %>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Hike Name</th>
+            <th>Hike Location</th>
+            <th>Description</th>
+            <th>Leash</th>
+            <th>Details</th>
+          </tr>
+        </thead>
       </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <% hikes.forEach(function(hike) { %>
+            <tr>
+              <td><%= hike.name %></td>
+              <td><%= hike.address %></td>
+              <td><%= hike.description %></td>
+              <td><%= hike.leash %></td>
+              <td><a href="/hikes/<%= hike._id %>">Information</a></td>
+          </tr>
+            <% }); %>  
+        </tbody>
+      </table>
+    </div>
     </section>
   </section>
 <%- include('../partials/footer') %>
