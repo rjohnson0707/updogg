@@ -24,6 +24,9 @@
 <h2>Reviews</h2>
 <form method="POST"
   action="/health/<%= health._id %>/reviews">
+  <label>Name:</label>
+  <select name="name">
+    <option value="<%= user.name %>"><%= user.name %></option>
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -41,7 +44,8 @@
   <table>
     <thead>
       <tr>
-      	 <th>Date</th>
+         <th>Date</th>
+         <th>Name</th>
         <th>Review</th>
         <th>Rating</th>
       </tr>
@@ -52,12 +56,13 @@
         <% total += h.rating %>
         <tr>
           <td><%= h.createdAt.toLocaleDateString() %></td>
+          <td><%= h.name %></td>
           <td><%= h.content %></td>
           <td><%= h.rating %></td>
         </tr>
         <% }); %>
         <tr>
-          <td colspan="2"></td>
+          <td colspan="3"></td>
           <td><strong><%= (total / health.reviews.length).toFixed(1) %></strong></td>
         </tr>
     </tbody>

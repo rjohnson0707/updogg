@@ -23,6 +23,9 @@
 <h2>Reviews</h2>
 <form method="POST"
   action="/foods/<%= food._id %>/reviews">
+  <label>Name:</label>
+  <select name="name">
+    <option value="<%= user.name %>"><%= user.name %></option>
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -40,7 +43,8 @@
   <table>
     <thead>
       <tr>
-      	 <th>Date</th>
+         <th>Date</th>
+         <th>Name</th>
         <th>Review</th>
         <th>Rating</th>
       </tr>
@@ -51,6 +55,7 @@
         <% total += f.rating %>
         <tr>
           <td><%= f.createdAt.toLocaleDateString() %></td>
+          <td><%= f.name %></td>
           <td><%= f.content %></td>
           <td><%= f.rating %></td>
         </tr>
