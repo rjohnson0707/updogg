@@ -39,7 +39,6 @@ function newHike(req, res) {
 }
 
 function create(req, res) {
-    req.body.leash = !!req.body.leash;
     req.body.createdBy = req.user._id;
     Hike.create(req.body, function(err, hike) {
     if (err) return res.redirect('/hikes');
@@ -57,7 +56,6 @@ function edit(req, res) {
  };
  
  function update(req, res) {
-     req.body.leash = !!req.body.leash;
      Hike.findByIdAndUpdate(req.params.id, req.body, function(err, hike) {
          res.redirect(`/hikes/${hike._id}`);
      });
