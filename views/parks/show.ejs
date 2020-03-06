@@ -15,7 +15,7 @@
    <button><a href="/parks/<%= park._id %>/edit">Edit Park?</a></button>
     <br><br>
     <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
-      <button type="submit">DELETE PARK</button>
+      <button type="submit" id="delete">DELETE PARK</button>
     </form>
     <% } %>
   </div>
