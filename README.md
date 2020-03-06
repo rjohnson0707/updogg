@@ -42,3 +42,4 @@ UpDogg is an app that allows users to look up dog friendly locations in their ar
 - Ability to add images in Reviews
 - Have Ad functionality
 - Search functionality to quickly find locations
+- Add Mobile Features
